@@ -46,8 +46,8 @@ filetree
 │  └─rabbitmq（）
 │  └─mongo（）
 │  └─elasticsearch（）
-│  └─logstash（图床）
-│  └─kibana（图床）
-│  └─minio（图床）
-│  └─openresty（图床）
+│  └─logstash（）
+│  └─kibana（）
+│  └─minio（）
+│  └─openresty（）
 ```
