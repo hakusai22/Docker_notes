@@ -1,0 +1,31 @@
+version: '3.0'
+services:
+  python2:
+    # docker容器名
+    container_name: data_platform_container
+    # 引入env文件
+#    env_file:
+#      - .env
+    build: ./python2/
+    # 端口映射
+    ports:
+      - "${HOST_PORT}:${CONTAINER_PORT}"
+    # 挂载目录
+    volumes:
+      - ${APP_CODE_PATH_HOST}:${APP_CODE_PATH_CONTAINER}
+      - ${CONFIG_PATH_HOST}:${CONFIG_PATH_CONTAINER}
+    # 配置环境变量
+    environment:
+      # 设置时区
+      - TZ=Asia/Shanghai
+    # 网络模式：host、bridge、none等，一般bridge
+#    network_mode: bridge
+    # 设置自动启动：unless-stopped、always等，unless-stopped为非正常停止则自动启动
+    restart: unless-stopped
+    # 中 stdin_open 相当于 run 命令中的 -d, 其中 tty 相当于 run 命令中的 -i
+    stdin_open: true
+    tty: true
+    # 线上环境(`&& tail -f /dev/null` 命令是为了让脚本执行完成后docker不自动关闭)
+    command: bash -c "bash ${APP_CODE_PATH_CONTAINER}/start.sh ${CONFIG_PATH_CONTAINER} && tail -f /dev/null"
+    # 开发环境
+    # command: python manage.py runserver
