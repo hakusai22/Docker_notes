@@ -14,6 +14,7 @@
 
 <h3 align="center">Dockerfile文件编写笔记</h3>
 
+
 <!-- links -->
 [your-project-path]:hakusai22/Docker_notes
 [contributors-shield]: https://img.shields.io/github/contributors/hakusai22/Docker_notes.svg?style=flat-square
@@ -29,3 +30,24 @@
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/xxxx
 
+
+### 文件目录说明
+
+```shell
+filetree
+├─Docker_notes（）
+│  ├─nginx（）
+│  ├─mysql（）
+│  ├─gitlab（）
+│  ├─kafka（）
+│  ├─postgreps（）
+│  └─redis（）
+│  └─redis-cluster（）
+│  └─rabbitmq（）
+│  └─mongo（）
+│  └─elasticsearch（）
+│  └─logstash（图床）
+│  └─kibana（图床）
+│  └─minio（图床）
+│  └─openresty（图床）
+```
